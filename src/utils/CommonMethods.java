@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Set;
 
 import static utils.BaseClass.driver;
-
 /**
  * Note: This is our BANK, for reusing the methods elsewhere in the framework when we need it.
  *   We store all common methods for usability here. This will help us to avoid DRY principle of programming/coding.
@@ -81,8 +80,12 @@ public class CommonMethods {
         waitForElement().until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void waitForVisibility(By by) {
+    public static void waitForVisibilityOfElement(By by) {
         waitForElement().until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
+
+    public static void waitForPresenceOfElement(By by) {
+        waitForElement().until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
     public static void clickButWaitForVisibility(WebElement element) {
