@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 import static utils.BaseClass.driver;
+
 /**
  * Note: This is our BANK, for reusing the methods elsewhere in the framework when we need it.
  *   We store all common methods for usability here. This will help us to avoid DRY principle of programming/coding.
@@ -19,7 +20,6 @@ import static utils.BaseClass.driver;
 
 
 public class CommonMethods {
-
     /**
      * Method will switch focus to next window/tab based on the window title/name
      *
@@ -80,6 +80,10 @@ public class CommonMethods {
         waitForElement().until(ExpectedConditions.visibilityOf(element));
     }
 
+    /**
+     * Method will wait for the given element based on the visibility of Element
+     * @param by By locator
+     */
     public static void waitForVisibilityOfElement(By by) {
         waitForElement().until(ExpectedConditions.visibilityOfElementLocated(by));
     }
@@ -211,6 +215,5 @@ public class CommonMethods {
             throw new RuntimeException(e);
         }
     }
-
 
 }

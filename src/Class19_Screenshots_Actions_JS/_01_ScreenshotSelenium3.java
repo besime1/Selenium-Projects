@@ -7,12 +7,12 @@ import utils.ConfigsReader;
 import java.io.File;
 import java.io.IOException;
 
-public class _01_ScreenshotSelenium1 extends BaseClass {
+public class _01_ScreenshotSelenium3 extends BaseClass {
     public static void main(String[] args) {
         setUp("https://exelentersdet.com");
 
         // Login to the web application
-        sendText(driver.findElement(By.id("txtUsername")), ConfigsReader.getProperties("Username"));
+        sendText(driver.findElement(By.id("txtUsername")), ConfigsReader.getProperties("username"));
         sendText(driver.findElement(By.id("txtPassword")), ConfigsReader.getProperties("password"));
         clickButWaitForClickability(driver.findElement(By.id("btnLogin")));
 
@@ -21,6 +21,9 @@ public class _01_ScreenshotSelenium1 extends BaseClass {
          *  For copying file from source (webpage) to destination (your local folder), we can use either:
          *      1. FileUtils.copyFile(sourceFile, destinationFile)  <== from Commons IO, an Apache Library
          *      2. FileHandler.copy(sourceFile, destinationFile)    <== from Selenium Library
+         *
+         *      Method used is:
+         *         - getScreenshotAs()
          */
 
         // Before taking screenshot, wait for any element (yellow circle) to become present
@@ -39,7 +42,7 @@ public class _01_ScreenshotSelenium1 extends BaseClass {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(sourceFile, new File("screenshots/dashboard5.jpeg"));
+            FileUtils.copyFile(sourceFile, new File("screenshots/dashboard5.png"));
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Screenshot is not taken");
