@@ -1,5 +1,4 @@
 package Class20_POM.Test;
-
 import Class20_POM.Pages._02_LoginPageWithPageFactory;
 import utils.BaseClass;
 /**
@@ -11,7 +10,15 @@ import utils.BaseClass;
  *      You can use LoginPage for storing logo's web element and create a
  *      new LogoTest class for testing.
  */
-
+/**
+ * Task: Exelenter Project Logo Validation
+ *      1. Navigate to URL https://www.exelentersdet.com
+ *      2. Verify Logo is displayed (No need to login)
+ *      3. Quit the browser.
+ *
+ *      You can use LoginPage for storing logo's web element and create a
+ *      new LogoTest class for testing.
+ */
 public class _02_LogoTest extends BaseClass{
     public static void main(String[] args) {
         setUp("https://exelentersdet.com/");

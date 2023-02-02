@@ -9,26 +9,27 @@ import static utils.BaseClass.driver;
 
 // Note: This is just a template for LoginPage where we store everything related to Login page here, in this class.
 //  In Page Object Model (Design Pattern), we organize our code by pages. Each web page will have their own class.
-public class _02_LoginPageWithPageFactory {
 
-    // LoginPage using PageFactory
-    //@FindBy() == driver.findElement()
+    public class _02_LoginPageWithPageFactory {
 
-    @FindBy(id = "txtUsername")                 //  locating by ID
-    public WebElement username;
+        // LoginPage using PageFactory
+        //@FindBy() == driver.findElement()
 
-    @FindBy(name = "txtPassword")               // locating by Name
-    public WebElement password;
+        @FindBy(id = "txtUsername")                 //  locating by ID
+        public WebElement username;
 
-    @FindBy(xpath = "//input[@id='btnLogin']") // Locating by xPath
-    public WebElement loginBtn;
+        @FindBy(name = "txtPassword")               // locating by Name
+        public WebElement password;
 
-    @FindBy(css = "#divLogo img")
-    public WebElement homepageLogo;
+        @FindBy(xpath = "//input[@id='btnLogin']") // Locating by xPath
+        public WebElement loginBtn;
+
+        @FindBy(css = "#divLogo img")
+        public WebElement homepageLogo;
+        public WebElement homepagelogo;
 
 
-    public _02_LoginPageWithPageFactory(){
-        PageFactory.initElements(driver, this);
+        public _02_LoginPageWithPageFactory() {
+            PageFactory.initElements(driver, this);
+        }
     }
-
-}
