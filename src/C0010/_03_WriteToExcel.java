@@ -5,12 +5,12 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
 public class WriteToExcel {
     public static void main(String[] args)  throws IOException {
-        String filePath = System.getProperty("user.dir")+"/testData/EmployeeList.xlsx";
+        String filePath = System.getProperty("user.dir") + "/testData/EmployeeList.xlsx.exe";
         FileInputStream fis = new FileInputStream(filePath);
 
         Workbook workbook = new XSSFWorkbook(fis);
